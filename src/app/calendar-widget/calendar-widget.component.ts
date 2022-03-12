@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { months, week } from '../shared/constants/statics';
 import { CalendarWidgetService } from './calendar-widget.service';
 
 @Component({
@@ -8,11 +9,25 @@ import { CalendarWidgetService } from './calendar-widget.service';
 })
 export class CalendarWidgetComponent implements OnInit {
   public years: Number[] = [];
-  public month: any[] = [];
+  public monthDays: any[] = [];
+  public months: any[] = months;
+  public weekDays: any[] = week;
+  public openSelector: boolean = false;
+  public selectedDate: Date = new Date();
   constructor(public calendar: CalendarWidgetService) {}
 
   ngOnInit(): void {
-    this.month = this.calendar.getMonthDays(new Date());
-    console.log(this.month)
+    this.monthDays = this.calendar.getMonthDays(this.selectedDate);
+    console.log(this.monthDays)
+  }
+
+  monthName(): string{
+    // selected Month
+    return this.calendar.getMonthName(this.selectedDate);
+  }
+
+
+  showYearMonthSelector(){
+    this.openSelector=  !this.openSelector;
   }
 }

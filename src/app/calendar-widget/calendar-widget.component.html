@@ -1,4 +1,36 @@
-<p>calendar-widget works!</p>
-<div *ngFor="let day of month ; let i = index">
-    <div>{{day}}</div>
+
+<div class="wrapper">
+    <div class="years-view" [ngClass]="{showSelector: openSelector}">
+        <div class="year-selector">
+                < 2016  >
+        </div>
+        
+        <div class="months">
+            <div class="month" *ngFor="let month of months">
+                {{month}}
+            </div>
+        </div>
+        
+    </div>
+    <div class="month-view">
+        <!-- <button (click)="showYearMonthSelector()"> Change Month</button> -->
+        <h2 class="month-name"> {{monthName()}} </h2>
+        <div class="week-days">
+            <div class="day" *ngFor="let day of weekDays; let i = index">{{day | shortWeekName}}</div>
+
+        </div>
+        <div class="days">
+            <div class="day" *ngFor="let day of monthDays; let i = index" [ngClass]="{hide: day == '0'}">
+                <div [ngClass]="{today: day==16}">{{day}}</div>
+
+            
+                <div class="events">
+                    <div class="event"></div>
+                    <div class="event"></div>
+                    <div class="event"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

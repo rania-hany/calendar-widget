@@ -1,1 +1,130 @@
 /* You can add global styles to this file, and also import other style files */
+@import './variables';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+
+body{
+    background-color: $light_color;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+    background-color: $white-color;
+    width: 80vw;
+    height: 80vh;
+    margin: 0 auto;
+    margin-top: 5%;
+    box-shadow: 0px 8px 25px -5px $primary_color;
+    font-size: 14px;
+    display: flex;
+    // move the below to years component
+    
+    .years-view{
+        width: 15vw;
+        box-shadow: 5px 0px 10px #c5bfd7;
+        background-color: $primary_color;
+        color: $white-color;
+
+        &.showSelector {
+            display: inline-block;
+        }
+
+        .year-selector{
+            text-align: center;
+            padding: 15px 5px;
+        }
+        .months {
+            display: flex;
+            flex-direction: column;
+            line-height: 2em;
+            .month{
+                padding: 3px 15px;
+                border-top: 0.5px solid #ffffffad;
+                &:hover {
+                    background-color: $dark_color;
+                    cursor: pointer;
+                }
+            }
+        }
+
+
+    }
+
+    // move the below to month component
+    .month-view{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        .month-name{
+            text-transform: uppercase;
+            color: $primary_color;
+            font-weight: bold;
+            letter-spacing: 8px;
+        }
+
+        .week-days {
+            .day{
+                display: inline-block;
+                width: 14%;
+                height: 30px;
+                font-weight: bold;
+            }
+
+        }
+
+        .days {
+            .day{
+                display: inline-block;
+                width: 14%;
+                height: 45px;
+                padding: 8px 0px;
+                .today{
+                    background-color: $primary_color;
+                    color: $white-color;
+                    width: 18px;
+                    height: 18px;
+                    text-align: center;
+                    margin: 0 auto;
+                    border-radius: 50%;
+                    padding: 4px;
+                }
+                &:hover {
+                    background-color: $light_color;
+                    cursor: pointer;
+                }
+                &.hide{
+                    visibility: hidden;
+                }
+
+                .events {
+                    .event {
+                        display: inline-block;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background-color: #ffe6a4;
+                        margin: 3px;
+                        margin-top: 15px;
+                        &:nth-child(2){
+                            background-color: #ffc1c1;
+
+                        }
+                        &:nth-child(3){
+                            background-color: #d5b2f6;
+
+                        }
+                        &:nth-child(4){
+                            background-color: #c3f2ea;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}

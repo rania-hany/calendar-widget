@@ -20,7 +20,7 @@ export class CalendarWidgetService {
     return (
       week.findIndex(
         (item) => item.toLocaleLowerCase() == day.toLocaleLowerCase()
-      ) + 1
+      )
     );
   }
 
@@ -40,14 +40,14 @@ export class CalendarWidgetService {
     for (let i = 0; i < 35; i++) {
       if (i < monthFirstDayIndex) {
         count++;
-        month.push(undefined);
+        month.push('0');
       } else if (
         index < this.daysInMonth(date.getMonth() + 1, date.getFullYear())
       ) {
         index++;
         month.push(index);
       } else {
-        month.push(undefined);
+        month.push('0');
       }
     }
     return month;
