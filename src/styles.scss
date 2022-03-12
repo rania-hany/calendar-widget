@@ -6,6 +6,7 @@
 body{
     background-color: $light_color;
     font-family: 'Open Sans', sans-serif;
+    color: $secondary_color;
 }
 
 .wrapper {
@@ -15,23 +16,29 @@ body{
     margin: 0 auto;
     margin-top: 5%;
     box-shadow: 0px 8px 25px -5px $primary_color;
-    font-size: 14px;
     display: flex;
     // move the below to years component
     
     .years-view{
-        width: 15vw;
         box-shadow: 5px 0px 10px #c5bfd7;
         background-color: $primary_color;
         color: $white-color;
 
+        transition: width 0.5s ease-out,  opacity 1.5s ease-in-out ;
+        opacity: 0;
+        width: 0;
+        overflow: hidden;
+
         &.showSelector {
             display: inline-block;
+            opacity: 1;
+            width: 15vw;
         }
 
         .year-selector{
             text-align: center;
             padding: 15px 5px;
+            font-weight: bold;
         }
         .months {
             display: flex;
@@ -40,6 +47,9 @@ body{
             .month{
                 padding: 3px 15px;
                 border-top: 0.5px solid #ffffffad;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
                 &:hover {
                     background-color: $dark_color;
                     cursor: pointer;
@@ -52,12 +62,12 @@ body{
 
     // move the below to month component
     .month-view{
-        display: flex;
-        justify-content: center;
-        text-align: center;
         width: 100%;
+        display: flex;
+        text-align: center;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
+
         .month-name{
             text-transform: uppercase;
             color: $primary_color;
@@ -124,7 +134,114 @@ body{
                 }
             }
         }
+
+        .years-link {
+            margin: 20px;
+            color: $primary_color;
+            cursor: pointer;
+            &:hover {
+                color: $mid_color;
+            }
+        }
     }
 
 
+    .events-view {
+        width: 35vw;
+        box-shadow: inset 8px 0px 6px #c5bfd729;
+        padding: 20px;
+        .date-view{
+            .day-name {
+                margin: 0.5em 0em;
+            }
+        }
+
+        .events-wrapper {
+            .events-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                flex-direction: row;
+                line-height: 0px;
+            }
+            .add-event {
+                .buttons {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+            .events-timeline {
+                margin-top: 15px;
+                display: flex;
+                font-size: 0.8em;
+                .vl {
+                    border-left: 1px solid $tertiary_color;
+                    height: 35vh;
+                }
+                .events{
+                    display: flex;
+                    flex-direction: column;
+                    .event {
+                        display: flex;
+                        margin: 8px 0px;
+                        .event-color {
+                            display: inline-block;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background-color: #ffe6a4;
+                            margin: 3px;
+                            margin-top: 15px;
+                            background-color: #ffc1c1;
+                            margin-left: -5px;
+                            box-shadow: 1px 1px 1px 1px #c5bfd76b;
+                        
+                        }
+                        .event-details {
+                            display: flex;
+                            flex-direction: column;
+                            margin-left: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    a {
+        cursor: pointer;
+        &:hover {
+            color: $tertiary_color;
+        }
+    }
+    .btn {
+        border: 0px;
+        padding: 7px 15px;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        &.btn-primary {
+            background-color: $primary_color;
+            &:hover {
+                background-color: $dark_color;
+            }
+        }
+        &.btn-primary {
+            background-color: $primary_color;
+            &:hover {
+                background-color: $dark_color;
+            }
+        }
+        &.btn-secondary {
+            background-color: $tertiary_color;
+            color: white;
+            &:hover {
+                background-color: $secondary_color;
+                color: white
+            }
+        }
+    }
+
+
+   
 }
