@@ -37,7 +37,7 @@ export class CalendarWidgetService {
     var monthFirstDayIndex = this.getMonthFirstDayIndex(date);
     var count = 0;
     var index = 0;
-    for (let i = 0; i < 35; i++) {
+    for (let i = 0; i < 42; i++) {
       if (i < monthFirstDayIndex) {
         count++;
         month.push('0');

@@ -13,7 +13,8 @@ export class CalendarWidgetComponent implements OnInit {
   public months: any[] = months;
   public weekDays: any[] = week;
   public openSelector: boolean = false;
-  public selectedDate: Date = new Date();
+   // static date to be removed
+  public selectedDate: Date = new Date(2022, 0, 24, 10, 33, 30, 0);
   constructor(public calendar: CalendarWidgetService) {}
 
   ngOnInit(): void {
