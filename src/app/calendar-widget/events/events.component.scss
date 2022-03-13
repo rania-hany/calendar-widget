@@ -1,0 +1,65 @@
+@import './../../../variables';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+
+.events-view {
+    width: 30vw;
+    box-shadow: inset 8px 0px 6px #c5bfd729;
+    padding: 20px;
+    .date-view{
+        .day-name {
+            margin: 0.5em 0em;
+        }
+    }
+
+    .events-wrapper {
+        .events-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-direction: row;
+            line-height: 0px;
+        }
+        .add-event {
+            .buttons {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        .events-timeline {
+            margin-top: 15px;
+            display: flex;
+            font-size: 0.8em;
+            .vl {
+                border-left: 1px solid $tertiary_color;
+                height: 35vh;
+            }
+            .events{
+                display: flex;
+                flex-direction: column;
+                .event {
+                    display: flex;
+                    margin: 8px 0px;
+                    .event-color {
+                        display: inline-block;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background-color: #ffe6a4;
+                        margin: 3px;
+                        margin-top: 15px;
+                        background-color: #ffc1c1;
+                        margin-left: -5px;
+                        box-shadow: 1px 1px 1px 1px #c5bfd76b;
+                    
+                    }
+                    .event-details {
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

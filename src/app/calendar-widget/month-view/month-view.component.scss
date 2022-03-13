@@ -1,0 +1,89 @@
+@import './../../../variables';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+
+// move the below to month component
+    .month-view{
+        width: 100%;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        .month-name{
+            text-transform: uppercase;
+            color: $primary_color;
+            font-weight: bold;
+            letter-spacing: 8px;
+        }
+
+        .week-days {
+            .day{
+                display: inline-block;
+                width: 14%;
+                height: 30px;
+                font-weight: bold;
+            }
+
+        }
+
+        .days {
+            .day{
+                display: inline-block;
+                width: 14%;
+                height: 45px;
+                padding: 8px 0px;
+                .today{
+                    background-color: $primary_color;
+                    color: $white-color;
+                    width: 18px;
+                    height: 18px;
+                    text-align: center;
+                    margin: 0 auto;
+                    border-radius: 50%;
+                    padding: 4px;
+                }
+                &:hover {
+                    background-color: $light_color;
+                    cursor: pointer;
+                }
+                &.hide{
+                    visibility: hidden;
+                }
+
+                .events {
+                    .event {
+                        display: inline-block;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background-color: #ffe6a4;
+                        margin: 3px;
+                        margin-top: 15px;
+                        &:nth-child(2){
+                            background-color: #ffc1c1;
+
+                        }
+                        &:nth-child(3){
+                            background-color: #d5b2f6;
+
+                        }
+                        &:nth-child(4){
+                            background-color: #c3f2ea;
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .years-link {
+            margin: 20px;
+            color: $primary_color;
+            cursor: pointer;
+            &:hover {
+                color: $mid_color;
+            }
+        }
+    }
+

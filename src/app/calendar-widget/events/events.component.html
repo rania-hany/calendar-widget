@@ -1,0 +1,66 @@
+<div class="events-view">
+    <a (click)="closeEvents()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-chevron-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+        </svg>
+    </a>
+    <div class="date-view">
+        <h2 class="day-name">Sunday</h2>
+        <div class="date-display">22 Sept 2022</div>
+        <br>
+        <hr>
+    </div>
+    <div class="events-wrapper">
+        <div class="events-header">
+            <h4>Events</h4>
+            <button class="btn btn-primary" (click)="isAddEvent = true">Add Event</button>
+        </div>
+        <div class="add-event" *ngIf="isAddEvent">
+            <input type="text" placeholder="Title..." />
+
+            <select name="type" id="type">
+                <option value="meeting">Meeting</option>
+                <option value="todo">To Do</option>
+                <option value="work">Work</option>
+                <option value="home">Home</option>
+            </select>
+
+            <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+            <p class="buttons">
+                <button class="btn btn-secondary"  (click)="isAddEvent = false">Cancel</button>
+                <button class="btn btn-primary">Save</button>
+            </p>
+        </div>
+        <div class="events-timeline">
+            <div class="vl">
+            </div>
+            <div class="events">
+                <div class="event">
+                    <div class="event-color"></div>
+                    <div class="event-details">
+                        <div class="event-date">05:00pm</div>
+                        <div class="event-title">Online Meeting</div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-color"></div>
+                    <div class="event-details">
+                        <div class="event-date">05:00pm</div>
+                        <div class="event-title">Online Meeting</div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-color"></div>
+                    <div class="event-details">
+                        <div class="event-date">05:00pm</div>
+                        <div class="event-title">Online Meeting</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

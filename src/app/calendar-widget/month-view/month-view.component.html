@@ -1,0 +1,31 @@
+<div class="month-view">
+    <h2 class="month-name">
+        <a class="years-link" (click)="showYearMonthSelector()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-calendar3" viewBox="0 0 16 16">
+                <path
+                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+                <path
+                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+            </svg>
+            {{ monthName() }}
+        </a>
+    </h2>
+    <div class="week-days">
+        <div class="day" *ngFor="let day of weekDays; let i = index">{{day | shortWeekName}}</div>
+
+    </div>
+    <div class="days">
+        <div class="day" *ngFor="let day of monthDays; let i = index" [ngClass]="{hide: day == '0'}" (click)="showEventsView('hello')">
+            <!-- <div class="day" *ngFor="let day of monthDays; let i = index" [ngClass]="{hide: day == '0'}"> -->
+            <div [ngClass]="{today: day==16}">{{day}}</div>
+
+
+            <div class="events">
+                <div class="event"></div>
+                <div class="event"></div>
+                <div class="event"></div>
+            </div>
+        </div>
+    </div>
+</div>
