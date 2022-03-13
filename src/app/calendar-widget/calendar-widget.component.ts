@@ -11,10 +11,16 @@ export class CalendarWidgetComponent implements OnInit {
   public years: Number[] = [];
   public months: any[] = months;
   public openSelector: boolean = false;
-  public showEventsView: boolean = false; 
+  public showEventsView: boolean = false;
+  public selectedYear: number = 2022;
+  public selectedMonth: string = '';
+  public selectedDate: Date = new Date();
+  public monthDays: any[] = [];
+
   constructor(public calendar: CalendarWidgetService) {}
 
   ngOnInit(): void {
+    this.monthDays = this.calendar.getMonthDays(this.selectedDate);
   }
 
   toggleYearMonthSelector() {
@@ -23,6 +29,18 @@ export class CalendarWidgetComponent implements OnInit {
 
   toggleEventsView() {
     this.showEventsView = !this.showEventsView;
-
   }
+
+  previousYear() {
+    this.selectedYear--;
+  }
+  nextYear() {
+    this.selectedYear++;
+  }
+  selectMonth(month: string) {
+    this.selectedMonth = month;
+    this.selectedDate = this.calendar.createSelectedDate(month,this.selectedYear.toString())
+    this.ngOnInit();
+  }
+  
 }

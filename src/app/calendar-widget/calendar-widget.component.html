@@ -1,18 +1,18 @@
 <div class="wrapper">
     <div class="years-view" [ngClass]="{showSelector: openSelector}">
         <div class="year-selector">
-            < 2022 >
+            <span (click)="previousYear()"><</span> {{selectedYear}} <span (click)="nextYear()">></span>
         </div>
 
         <div class="months">
-            <div class="month" *ngFor="let month of months">
-                {{month}}
+            <div class="month" *ngFor="let month of months" (click)="selectMonth(month)">
+               {{month}}
             </div>
         </div>
 
     </div>
 
-    <app-month-view (openEvents)="toggleEventsView()" (openSelector)="toggleYearMonthSelector()"></app-month-view>
+    <app-month-view [selectedDate]="selectedDate" [monthDays]="monthDays" (openEvents)="toggleEventsView()" (openSelector)="toggleYearMonthSelector()"></app-month-view>
 
     <app-events (showEventsView)="toggleEventsView()" *ngIf="showEventsView"></app-events>
 </div>

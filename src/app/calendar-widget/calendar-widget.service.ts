@@ -37,8 +37,8 @@ export class CalendarWidgetService {
     var monthFirstDayIndex = this.getMonthFirstDayIndex(date);
     var count = 0;
     var index = 0;
-    for (let i = 0; i < 42; i++) {
-      if (i < monthFirstDayIndex) {
+    for (let iterator = 0; iterator < 42; iterator++) {
+      if (iterator < monthFirstDayIndex) {
         count++;
         month.push('0');
       } else if (
@@ -52,4 +52,13 @@ export class CalendarWidgetService {
     }
     return month;
   }
+
+  createSelectedDate(month:string,year: string){
+    var date = Date.parse(month + "1, " + year);
+    if(!isNaN(date)){
+       return new Date(date);
+    }
+    return new Date();
+  }
+ 
 }
