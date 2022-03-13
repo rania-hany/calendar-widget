@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { week } from '../shared/constants/statics';
+import { week } from '../../shared/constants/statics';
 
 @Injectable({
   providedIn: 'root',

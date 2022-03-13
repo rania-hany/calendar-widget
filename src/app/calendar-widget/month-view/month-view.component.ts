@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { week } from 'src/app/shared/constants/statics';
-import { CalendarWidgetService } from '../calendar-widget.service';
+import { CalendarWidgetService } from '../services/calendar-widget.service';
 
 @Component({
   selector: 'app-month-view',

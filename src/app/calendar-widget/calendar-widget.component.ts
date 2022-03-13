@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { months, week } from '../shared/constants/statics';
-import { CalendarWidgetService } from './calendar-widget.service';
+import { months } from '../shared/constants/statics';
+import { CalendarWidgetService } from './services/calendar-widget.service';
+
 
 @Component({
   selector: 'app-calendar-widget',
