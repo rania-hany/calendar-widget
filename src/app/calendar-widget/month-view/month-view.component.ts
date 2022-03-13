@@ -12,7 +12,8 @@ export class MonthViewComponent implements OnInit {
   public weekDays: any[] = week;
   // static date to be removed
   // public selectedDate: Date = new Date(2022, 0, 24, 10, 33, 30, 0);
-  @Input() selectedDate: Date;
+  @Input() currentDate: Date;
+
   public today: number;
   @Input() monthDays: any[];
   @Output() openSelector: EventEmitter<any> = new EventEmitter<any>();
@@ -22,11 +23,11 @@ export class MonthViewComponent implements OnInit {
 
   ngOnInit(): void {}
   ngOnChanges() {
-    this.today = this.selectedDate.getDate();
+    this.today = this.currentDate.getDate();
   }
   monthName(): string {
     // selected Month
-    return this.calendar.getMonthName(this.selectedDate);
+    return this.calendar.getMonthName(this.currentDate);
   }
   showYearMonthSelector() {
     this.openSelector.emit();
@@ -36,4 +37,6 @@ export class MonthViewComponent implements OnInit {
     console.log('FIRST FROM MONTH VIEW');
     this.openEvents.emit(eventDetails);
   }
+
+ 
 }

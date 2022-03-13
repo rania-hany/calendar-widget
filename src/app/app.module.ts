@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalendarWidgetModule } from './calendar-widget/calendar-widget.module';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    CalendarWidgetModule
+    CalendarWidgetModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,8 +7,8 @@
         </svg>
     </a>
     <div class="date-view">
-        <h2 class="day-name">Sunday</h2>
-        <div class="date-display">22 Sept 2022</div>
+        <h2 class="day-name">{{selectedDate.toLocaleDateString("en-US", { weekday: 'long'})}}</h2>
+        <div class="date-display">{{selectedDate.toLocaleDateString("en-US", {year: 'numeric', month: 'long', day: 'numeric' })}}</div>
         <br>
         <hr>
     </div>
@@ -37,27 +37,15 @@
             <div class="vl">
             </div>
             <div class="events">
-                <div class="event">
-                    <div class="event-color"></div>
-                    <div class="event-details">
-                        <div class="event-date">05:00pm</div>
-                        <div class="event-title">Online Meeting</div>
-                    </div>
-                </div>
-
-                <div class="event">
-                    <div class="event-color"></div>
-                    <div class="event-details">
-                        <div class="event-date">05:00pm</div>
-                        <div class="event-title">Online Meeting</div>
-                    </div>
-                </div>
-
-                <div class="event">
-                    <div class="event-color"></div>
-                    <div class="event-details">
-                        <div class="event-date">05:00pm</div>
-                        <div class="event-title">Online Meeting</div>
+                <div *ngIf="checkEvents()">
+                    <div *ngFor="let event of checkEvents(); let i = index" class="events">
+                        <div class="event">
+                            <div class="event-color"></div>
+                            <div class="event-details">
+                                <div class="event-date">{{event.time}}</div>
+                                <div class="event-title">{{event.eventName}}</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

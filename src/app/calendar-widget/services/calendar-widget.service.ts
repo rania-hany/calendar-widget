@@ -53,8 +53,8 @@ export class CalendarWidgetService {
     return month;
   }
 
-  createSelectedDate(month:string,year: string){
-    var date = Date.parse(month + "1, " + year);
+  createDate(month:string,year: string, day = 1){
+    var date = Date.parse(`${month} ${day}, ${year}`);
     if(!isNaN(date)){
        return new Date(date);
     }

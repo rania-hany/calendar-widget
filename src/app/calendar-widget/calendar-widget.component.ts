@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { months } from '../shared/constants/statics';
 import { CalendarWidgetService } from './services/calendar-widget.service';
-
+import { EventsService } from './services/events.service';
 
 @Component({
   selector: 'app-calendar-widget',
@@ -15,23 +15,21 @@ export class CalendarWidgetComponent implements OnInit {
   public showEventsView: boolean = false;
   public selectedYear: number = 2022;
   public selectedMonth: string = '';
-  public selectedDate: Date = new Date();
+  public currentDate: Date = new Date();
+  public selectedDate: Date;
   public monthDays: any[] = [];
-
-  constructor(public calendar: CalendarWidgetService) {}
+  public events:any;
+  constructor(public calendar: CalendarWidgetService, public eventsService: EventsService) {
+    this.selectedMonth = this.calendar.getMonthName(new Date())
+    this.eventsService.getEvents().subscribe(events=>{ 
+      this.events = events
+      console.log(this.events)
+    });
+  }
 
   ngOnInit(): void {
-    this.monthDays = this.calendar.getMonthDays(this.selectedDate);
+    this.monthDays = this.calendar.getMonthDays(this.currentDate);
   }
-
-  toggleYearMonthSelector() {
-    this.openSelector = !this.openSelector;
-  }
-
-  toggleEventsView() {
-    this.showEventsView = !this.showEventsView;
-  }
-
   previousYear() {
     this.selectedYear--;
   }
@@ -40,8 +38,23 @@ export class CalendarWidgetComponent implements OnInit {
   }
   selectMonth(month: string) {
     this.selectedMonth = month;
-    this.selectedDate = this.calendar.createSelectedDate(month,this.selectedYear.toString())
+    this.currentDate = this.calendar.createDate(
+      month,
+      this.selectedYear.toString()
+    );
     this.ngOnInit();
   }
-  
+  toggleYearMonthSelector() {
+    this.openSelector = !this.openSelector;
+  }
+
+  toggleEventsView(day: any) {
+    this.showEventsView = !this.showEventsView;
+    this.selectedDate = this.calendar.createDate(
+      this.selectedMonth,
+      this.selectedYear.toString(),
+      day
+    );
+    console.log(this.selectedDate);
+  }
 }

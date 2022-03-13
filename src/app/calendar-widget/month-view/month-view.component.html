@@ -16,7 +16,7 @@
 
     </div>
     <div class="days">
-        <div class="day" *ngFor="let day of monthDays; let i = index" [ngClass]="{hide: day == '0'}" (click)="showEventsView('hello')">
+        <div class="day" *ngFor="let day of monthDays; let i = index" [ngClass]="{hide: day == '0'}" (click)="showEventsView(day)">
             <!-- <div class="day" *ngFor="let day of monthDays; let i = index" [ngClass]="{hide: day == '0'}"> -->
             <div [ngClass]="{today: day==today}">{{day}}</div>
 
