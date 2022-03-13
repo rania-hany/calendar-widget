@@ -19,29 +19,27 @@
 
         .week-days {
             .day{
-                display: inline-block;
-                width: 14%;
-                height: 30px;
                 font-weight: bold;
+                display: inline-block;
+                width: 13.6%;
+                color: #666;
             }
-
+            margin-bottom: 2%;
         }
 
         .days {
             .day{
-                display: inline-block;
-                width: 14%;
-                height: 45px;
+                display: inline-table;
+                width: 13.6%;
+                height: 6vh;
                 padding: 8px 0px;
-                .today{
-                    background-color: $primary_color;
-                    color: $white-color;
-                    width: 18px;
-                    height: 18px;
-                    text-align: center;
-                    margin: 0 auto;
-                    border-radius: 50%;
-                    padding: 4px;
+                box-sizing: border-box;
+                &.today{
+                    border: 2px solid $primary_color;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    color: $primary_color;
+                    font-weight: bolder;
                 }
                 &:hover {
                     background-color: $light_color;
@@ -50,27 +48,33 @@
                 &.hide{
                     visibility: hidden;
                 }
+                &.select {
+                    background-color: $mid_color;
+                    border-radius: 6px;
+                }
 
                 .events {
+                    min-height: 1.5vh;
+                    line-height: 1.5vh;
                     .event {
                         display: inline-block;
                         width: 8px;
                         height: 8px;
                         border-radius: 50%;
-                        background-color: #ffe6a4;
-                        margin: 3px;
-                        margin-top: 15px;
-                        &:nth-child(2){
+                        margin: 0px 3px;
+                        background-color: #b6b6b6;
+
+                        &.home {
                             background-color: #ffc1c1;
-
                         }
-                        &:nth-child(3){
-                            background-color: #d5b2f6;
-
-                        }
-                        &:nth-child(4){
+                        &.work {
                             background-color: #c3f2ea;
-
+                        }
+                        &.meeting{
+                            background-color: #ffe6a4;
+                        }
+                        &.todo{
+                            background-color: #c3f19d;
                         }
                     }
                 }

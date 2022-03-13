@@ -1,30 +1,66 @@
 [
     {
-        "eventname": "Madiha's Wedding",
+        "name": "Madiha's Wedding",
         "date": "22 Mar 2022",
-        "type": "Home",
+        "type": "home",
         "time": "14:00"
     },
     {
-        "eventname": "LoLo's Wedding",
+        "name": "LoLo's Wedding",
+        "date": "14 Jan 2022",
+        "type": "home",
+        "time": "14:00"
+    },
+    {
+        "name": "LoLo's Wedding",
+        "date": "14 Jan 2022",
+        "type": "work",
+        "time": "17:00"
+    },
+    {
+        "name": "LoLo's Wedding",
+        "date": "14 Jan 2022",
+        "type": "home",
+        "time": "18:00"
+    },
+    {
+        "name": "LoLo's Wedding",
+        "date": "29 Jan 2022",
+        "type": "home",
+        "time": "14:00"
+    },
+    {
+        "name": "LoLo's Wedding",
+        "date": "30 Mar 2022",
+        "type": "home",
+        "time": "14:00"
+    },
+    {
+        "name": "LoLo's Wedding",
+        "date": "30 Mar 2022",
+        "type": "home",
+        "time": "18:00"
+    },
+    {
+        "name": "LoLo's Wedding",
         "date": "14 Mar 2022",
-        "type": "Home",
+        "type": "home",
         "time": "14:00"
     },
     {
-        "eventname": "Year Review",
+        "name": "Year Review",
         "date": "20 Mar 2022",
         "type": "work",
         "time": "14:00"
     },
     {
-        "eventname": "Study AWS",
+        "name": "Study AWS",
         "date": "12 Mar 2022",
         "type": "todo",
         "time": "14:00"
     },
     {
-        "eventname": "1-1 with the Sherif",
+        "name": "1-1 with the Sherif",
         "date": "28 Mar 2022",
         "type": "meeting",
         "time": "14:00"

@@ -17,13 +17,14 @@ export class CalendarWidgetComponent implements OnInit {
   public selectedMonth: string = '';
   public currentDate: Date = new Date();
   public selectedDate: Date;
+  public selectedDay: string;
   public monthDays: any[] = [];
   public events:any;
   constructor(public calendar: CalendarWidgetService, public eventsService: EventsService) {
-    this.selectedMonth = this.calendar.getMonthName(new Date())
+    const todayDate = new Date();
+    this.selectedMonth = this.calendar.getMonthName(todayDate);
     this.eventsService.getEvents().subscribe(events=>{ 
       this.events = events
-      console.log(this.events)
     });
   }
 
@@ -48,13 +49,16 @@ export class CalendarWidgetComponent implements OnInit {
     this.openSelector = !this.openSelector;
   }
 
-  toggleEventsView(day: any) {
-    this.showEventsView = !this.showEventsView;
+  switchEvent(day: any) {
+    this.showEventsView = true;
     this.selectedDate = this.calendar.createDate(
       this.selectedMonth,
       this.selectedYear.toString(),
       day
     );
-    console.log(this.selectedDate);
+  }
+  closeEventsView() {
+    this.showEventsView = false;
+    this.selectedDay = ''
   }
 }

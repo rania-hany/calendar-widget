@@ -12,7 +12,7 @@
 
     </div>
 
-    <app-month-view [currentDate]="currentDate" [monthDays]="monthDays" (openEvents)="toggleEventsView($event)" (openSelector)="toggleYearMonthSelector()"></app-month-view>
+    <app-month-view class="center" [selectedDay]="selectedDay" [events]="events" [selectedMonth]="selectedMonth" [selectedYear]="selectedYear" [currentDate]="currentDate" [monthDays]="monthDays" (openEvents)="switchEvent($event)" (openSelector)="toggleYearMonthSelector()"></app-month-view>
 
-    <app-events [events]="events" [selectedDate]="selectedDate" (showEventsView)="toggleEventsView($event)" *ngIf="showEventsView"></app-events>
+    <app-events [events]="events" [selectedDate]="selectedDate" (showEventsView)="closeEventsView()" *ngIf="showEventsView"></app-events>
 </div>

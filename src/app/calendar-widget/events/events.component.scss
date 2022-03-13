@@ -5,7 +5,9 @@
 .events-view {
     width: 30vw;
     box-shadow: inset 8px 0px 6px #c5bfd729;
-    padding: 20px;
+    padding: 20px;    
+    height: -webkit-fill-available;
+    overflow-y: auto;
     .date-view{
         .day-name {
             margin: 0.5em 0em;
@@ -32,7 +34,7 @@
             font-size: 0.8em;
             .vl {
                 border-left: 1px solid $tertiary_color;
-                height: 35vh;
+                height: 33vh;
             }
             .events{
                 display: flex;
@@ -45,12 +47,24 @@
                         width: 8px;
                         height: 8px;
                         border-radius: 50%;
-                        background-color: #ffe6a4;
                         margin: 3px;
                         margin-top: 15px;
-                        background-color: #ffc1c1;
                         margin-left: -5px;
                         box-shadow: 1px 1px 1px 1px #c5bfd76b;
+                        background-color: #b6b6b6;
+
+                        &.home {
+                            background-color: #ffc1c1;
+                        }
+                        &.work {
+                            background-color: #c3f2ea;
+                        }
+                        &.meeting{
+                            background-color: #ffe6a4;
+                        }
+                        &.todo{
+                            background-color: #c3f19d;
+                        }
                     
                     }
                     .event-details {

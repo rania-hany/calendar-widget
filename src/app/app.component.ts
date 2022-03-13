@@ -8,11 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'calendar-widget';
 
-  months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
-
   ngOnInit(){
 
-    console.log("MONTHS: ", this.months);
   }
  
 
