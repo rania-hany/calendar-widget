@@ -1,6 +1,5 @@
 @import './../../variables';
 
-
 .years-view{
     box-shadow: 5px 0px 10px #c5bfd7;
     background-color: $primary_color;
@@ -50,4 +49,43 @@
     }
 
 
+}
+
+
+a {
+    cursor: pointer;
+    &:hover {
+        color: $tertiary_color;
+    }
+}
+.btn {
+    border: 0px;
+    padding: 7px 15px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    &.btn-primary {
+        background-color: $primary_color;
+        &:hover {
+            background-color: $dark_color;
+        }
+    }
+    &.btn-primary {
+        background-color: $primary_color;
+        &:hover {
+            background-color: $dark_color;
+        }
+    }
+    &.btn-secondary {
+        background-color: $tertiary_color;
+        color: white;
+        &:hover {
+            background-color: $secondary_color;
+            color: white
+        }
+    }
+}
+
+.center{
+    margin: 0 auto
 }

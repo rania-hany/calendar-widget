@@ -19,44 +19,5 @@ body{
     box-shadow: 0px 8px 25px -5px $primary_color;
     display: flex;
 
-
-    a {
-        cursor: pointer;
-        &:hover {
-            color: $tertiary_color;
-        }
-    }
-    .btn {
-        border: 0px;
-        padding: 7px 15px;
-        border-radius: 5px;
-        color: white;
-        cursor: pointer;
-        &.btn-primary {
-            background-color: $primary_color;
-            &:hover {
-                background-color: $dark_color;
-            }
-        }
-        &.btn-primary {
-            background-color: $primary_color;
-            &:hover {
-                background-color: $dark_color;
-            }
-        }
-        &.btn-secondary {
-            background-color: $tertiary_color;
-            color: white;
-            &:hover {
-                background-color: $secondary_color;
-                color: white
-            }
-        }
-    }
-
-    .center{
-        margin: 0 auto
-    }
-
     
 }
