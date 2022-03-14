@@ -58,18 +58,13 @@ a {
         color: $tertiary_color;
     }
 }
+
 .btn {
     border: 0px;
     padding: 7px 15px;
     border-radius: 5px;
     color: white;
     cursor: pointer;
-    &.btn-primary {
-        background-color: $primary_color;
-        &:hover {
-            background-color: $dark_color;
-        }
-    }
     &.btn-primary {
         background-color: $primary_color;
         &:hover {

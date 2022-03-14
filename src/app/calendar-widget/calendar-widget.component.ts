@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { months } from '../shared/constants/statics';
 import { CalendarWidgetService } from './services/calendar-widget.service';
 import { EventsService } from './services/events.service';
@@ -7,6 +7,7 @@ import { EventsService } from './services/events.service';
   selector: 'app-calendar-widget',
   templateUrl: './calendar-widget.component.html',
   styleUrls: ['./calendar-widget.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CalendarWidgetComponent implements OnInit {
   public years: Number[] = [];
