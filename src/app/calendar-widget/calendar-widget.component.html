@@ -1,7 +1,9 @@
 <div class="wrapper">
     <div class="years-view" [ngClass]="{showSelector: openSelector}">
         <div class="year-selector">
-            <span (click)="previousYear()"><</span> {{selectedYear}} <span (click)="nextYear()">></span>
+            <a (click)="previousYear()"><</a>
+            &nbsp;<span class="year">{{selectedYear}}</span>&nbsp;
+            <a (click)="nextYear()">></a>
         </div>
 
         <div class="months">

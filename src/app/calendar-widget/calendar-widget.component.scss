@@ -1,0 +1,53 @@
+@import './../../variables';
+
+
+.years-view{
+    box-shadow: 5px 0px 10px #c5bfd7;
+    background-color: $primary_color;
+    color: $white-color;
+    transition: width 0.5s linear,  opacity 1.5s ease-in-out ;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    *{
+        opacity: 0;
+        transition: opacity ease-out ;
+    }
+    .year{
+        color: $mid-color;
+        text-decoration: underline;
+    }
+    &.showSelector {
+        opacity: 1;
+        width: 15vw;
+        transition: width 0.5s linear,  opacity 1s ease-in-out ;
+        *{
+            opacity: 1;
+        }
+    }
+
+    .year-selector{
+        text-align: center;
+        padding: 15px 5px;
+        font-weight: bold;
+        border-bottom: 1px solid $white-color;
+    }
+    .months {
+        display: flex;
+        flex-direction: column;
+        line-height: 2em;
+        font-size: 0.65em;
+        .month{
+            padding: 3px 15px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            &:hover {
+                background-color: $dark_color;
+                cursor: pointer;
+            }
+        }
+    }
+
+
+}

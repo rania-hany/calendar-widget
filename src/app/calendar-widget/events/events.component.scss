@@ -23,6 +23,22 @@
             line-height: 0px;
         }
         .add-event {
+            input {
+                height: 25px;
+                margin: 5px 0px;
+                &[type='text']{
+                    width: 170px;
+                }
+            }
+            select {
+                height: 30px;
+                margin-right: 10px;
+            }
+            option {
+                height: 30px;
+                line-height: 30px;
+                padding: 5px;
+            }
             .buttons {
                 display: flex;
                 justify-content: space-between;

@@ -85,8 +85,12 @@
             margin: 20px;
             color: $primary_color;
             cursor: pointer;
+            line-height: 10vh;
             &:hover {
                 color: $mid_color;
+            }
+            svg{
+                transform: translate(0, -10%);
             }
         }
     }

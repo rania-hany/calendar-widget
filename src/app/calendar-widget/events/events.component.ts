@@ -37,10 +37,18 @@ export class EventsComponent implements OnInit {
   }
 
   showAddEvent() {
+    
+    this.emptyAddEventFields();
     this.isAddEvent = !this.isAddEvent;
   }
 
+  emptyAddEventFields() {
+    this.name = '';
+    this.type = '';
+    this.time = '';
+  }
   closeEvents() {
+    this.emptyAddEventFields();
     this.showEventsView.emit();
   }
   checkEvents() {
@@ -58,6 +66,8 @@ export class EventsComponent implements OnInit {
       };
       this.eventsService.addEvent(event, this.save);
       this.isAddEvent = false;
+      this.emptyAddEventFields();
+
     }
   }
 }
